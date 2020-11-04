@@ -41,7 +41,11 @@ class Father
     public $name;
     public function __construct($name)
     {
-        $this->name = $name;
+        $this->name($name);
+    }
+
+    function name($name){
+        $this->name = 'Yan' . $name;
     }
 }
 
@@ -52,7 +56,7 @@ class Child extends Father
 
     function __construct($age, $male)
     {
-        parent::__construct("shelly");
+        parent::__construct("Shelly");
         $this->age = $age;
         $this->male = $male;
     }

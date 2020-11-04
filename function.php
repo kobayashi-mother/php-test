@@ -67,26 +67,26 @@ function hi()
 // echo $m_serial3 = substr(sprintf('%.8f',microtime(true)/100000),6,8);
 
 // ----------------------------------------------file_exists("word.html") 可檢查 檔案 與 目錄 是否存在
-$path ='C:\xampp\htdocs\test-php';
-$path2 ='C:\xampp\htdocs\test-php\word.html';
+$path = 'C:\xampp\htdocs\test-php';
+$path2 = 'C:\xampp\htdocs\test-php\word.html';
 
-if (file_exists($path) && file_exists($path2)){
+if (file_exists($path) && file_exists($path2)) {
   // echo "path and path2 are yes";
 }
 
 // ----------------------------------------------is_file() 只可檢查 檔案 是否存在
-if (is_file($path2)){
+if (is_file($path2)) {
   // echo "only path2 yes";
 }
 
 // ----------------------------------------------is_dir() 只可檢查 目錄 是否存在
-if (is_dir($path)){
+if (is_dir($path)) {
   // echo "only path yes";
 }
 
 // ----------------------------------------------glob() 可列出有.html的檔案，頁簽有更詳細的用法
 
-foreach(glob("*.html") as $fileName){
+foreach (glob("*.html") as $fileName) {
   // echo $fileName."\n";
 }
 
@@ -101,7 +101,7 @@ foreach(glob("*.html") as $fileName){
 
 
 // ----------------------------------------------fopen 用php寫文件
-$file = fopen("test.txt","w"); 
+$file = fopen("test.txt", "w");
 // echo fwrite($file,"Hello World. Testing!"); 
 // fclose($file); 
 
@@ -125,4 +125,69 @@ $str = 'this is error log\r\n';
 // echo( "sOuterTest2 is $sOuterTest2\r\n" ); //original
 // echo( "sOuterTest3 is $sOuterTest3\r\n" ); //changed
 
-// ----------------------------------------------list()把陣列中的值賦予變數
+// ----------------------------------------------base64_decode 亂碼大小寫英26+26數字0-9 = 64
+$creditCardNumber = '122224455';
+// echo $shelly = base64_encode($creditCardNumber) . "\n\r";
+// echo base64_decode($shelly);
+
+// ----------------------------------------------strtotime 時間轉成時間搓
+$NowTime = date("Y-m-d H:i:s");
+// echo $NowTime;
+// echo strtotime("$NowTime,now"), "<br>";
+// echo strtotime("now"), "<br>";
+// echo strtotime("10 September 2014"), "<br>";
+// echo strtotime("+1 day"), "<br>";
+// echo strtotime("+1 week"), "<br>";
+// echo strtotime("+2 week 3 days 2 hours 5 seconds"), "<br>";
+// echo strtotime("next Thursday"), "<br>";
+// echo strtotime("last Monday"), "<br>";
+
+// ----------------------------------------------date_create()字串轉date /date_format 日期轉格式
+$date = date_create("2016-09-25");
+// echo date_format($date,"Y/m/d H:i:s");
+
+// ----------------------------------------------date() 日期
+$day = date('yy-m-d h:i:s');
+// echo $day;
+
+// ----------------------------------------------str_pad 字串填補
+$str = "Hello World";
+// echo date("Ym").str_pad($str,30,".",STR_PAD_LEFT);
+
+// ----------------------------------------------extract 陣列變數化
+$a = "Original";
+// $my_array = array("a" => "Cat","b" => "Dog", "c" => "Horse");
+// extract($my_array);
+// echo "a = $a; b = $b; c = $c";
+
+// ----------------------------------------------ob 可以把内容保留在伺服器的緩衝區中
+ob_start();
+echo("Hello there!"); //would normally get printed to the screen/output to browser
+$output = ob_get_contents();
+ob_end_clean();
+
+// echo $output;
+
+ob_start();
+echo("Hello mom!");
+$outoutput = ob_get_clean();
+// echo $outoutput;
+
+// ----------------------------------------------mkdir建立資料夾
+$file_path = "C:/xampp/htdocs/test-php/albertlog";
+
+// if(!file_exists($file_path)){
+//  mkdir($file_path);
+//  echo "“建立資料夾成功”";
+// }else{
+//  echo "“資料夾已存在”";
+// }
+
+// ----------------------------------------------class_exists('class', false) 確認class有沒有在，如不使用 __autoload 第二個參數設定 false
+class myClass{
+  
+}
+if (class_exists('myClass', false)) {
+  echo 'hi';
+}
+

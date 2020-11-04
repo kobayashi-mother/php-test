@@ -60,13 +60,49 @@
 // print_r($b);
 // echo $point;
 
-$a = [1, 2, 3, 4];
-$i = 0;
-while($i<count($a))
-{
-  $q_data[$pointtypearr[$a[1]]]+=$a[0];
-  $alterpoint += $a[0];
-  $i++;  
-}
+// -------------------------------------------------------------喵喵
+// $order_no_arr =[];
+// $retrieve_order_no ='a';
+// $retrieve_order_b ='b';
 
-echo $alterpoint;
+// $order_no_arr[$retrieve_order_no] =  $retrieve_order_no;
+// $order_no_arr[$retrieve_order_b] =  $retrieve_order_b;
+// print_r($order_no_arr);
+
+// ------------------------------------------------------------- DOMDocument 是php內建的，可以輸出xml檔案
+// $dom = new DOMDocument('1.0', 'utf-8');
+// $doc->formatOutput = true;
+// $element = $dom->createElement('test', 'This is the root element!');
+// $dom->appendChild($element);
+
+// $element = $dom->createElement('test', 'This is the root element!');
+// $dom->appendChild($element);
+
+// $domTN = $dom->createTextNode('GeeksforGeeks'); 
+// $dom->appendChild($domTN); 
+
+
+
+
+// echo $dom->saveXML();
+// ------------------------------------------------------------- DOMDocument 是php內建的，可以輸出xml檔案2
+// $doc = new DOMDocument('1.0','UTF-8');
+// $doc->formatOutput = true;
+// $Element = $doc->createElement('test');
+// $Element->setAttribute("stat", "ok");
+// $doc->appendChild($Element);
+// $content = $doc->createTextNode('1234');
+// $doc->appendChild($content);
+
+// echo $doc->saveXML();
+// ------------------------------------------------------------- DOMDocument 是php內建的，可以輸出xml檔案3
+// $doc = new DOMDocument('1.0','UTF-8');
+// $root = $doc->createElement('rsp');
+// $root->setAttribute("stat", "fail");
+// $root = $doc->appendChild($root);
+// $errNode = $doc->createElement('err');
+// $errNode->setAttribute("code", '123');
+// $errNode->setAttribute("msg", 'msgg');
+// $errNode = $root->appendChild($errNode);
+// echo $doc->saveXML();
+

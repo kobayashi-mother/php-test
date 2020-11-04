@@ -19,7 +19,7 @@ $classname = 'MyClass';
 class Dog
 {
     static $count = 0;
-    public static function bark()
+    protected static function bark()
     {
         echo 'i am a dog';
     }

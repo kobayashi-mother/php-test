@@ -66,4 +66,25 @@ class Father
     static $name = "Jason";
 }
 
-echo Father::$name;
+// echo Father::$name;
+
+
+// ----------------------------------------------9.ReflectionClass反射類別，讀取指定類別的資料
+class myClass {
+    const NONE = 0;
+    const REQUEST = 100;
+    const AUTH = 101;
+    // others...
+    static function getConstants() {
+        $oClass = new ReflectionClass(__CLASS__);
+        return $oClass->getConstants();
+    }
+}
+
+
+// print_r(myClass::getConstants());
+
+
+
+
+
